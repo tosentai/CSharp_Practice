@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtFirstName = new TextBox();
             txtLastName = new TextBox();
             txtPhone = new TextBox();
@@ -227,7 +228,16 @@
             // dgClients
             // 
             dgClients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgClients.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgClients.DefaultCellStyle = dataGridViewCellStyle1;
             dgClients.Location = new Point(306, 13);
             dgClients.Name = "dgClients";
             dgClients.Size = new Size(612, 652);

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtPhone = new TextBox();
             txtPosition = new TextBox();
             txtName = new TextBox();
@@ -291,7 +293,16 @@
             // dgEmployee
             // 
             dgEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgEmployee.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgEmployee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgEmployee.DefaultCellStyle = dataGridViewCellStyle1;
             dgEmployee.Location = new Point(306, 13);
             dgEmployee.Name = "dgEmployee";
             dgEmployee.Size = new Size(612, 312);
@@ -301,7 +312,16 @@
             // dgService
             // 
             dgService.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgService.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgService.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgService.DefaultCellStyle = dataGridViewCellStyle2;
             dgService.Location = new Point(306, 341);
             dgService.Name = "dgService";
             dgService.Size = new Size(612, 323);

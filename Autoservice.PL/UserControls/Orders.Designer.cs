@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label2 = new Label();
             label1 = new Label();
             dtpOrderDate = new DateTimePicker();
@@ -171,7 +173,16 @@
             // dgOrders
             // 
             dgOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgOrders.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgOrders.DefaultCellStyle = dataGridViewCellStyle1;
             dgOrders.Location = new Point(28, 96);
             dgOrders.Name = "dgOrders";
             dgOrders.ReadOnly = true;
@@ -283,7 +294,16 @@
             // dgOrderDetails
             // 
             dgOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgOrderDetails.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgOrderDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgOrderDetails.DefaultCellStyle = dataGridViewCellStyle2;
             dgOrderDetails.Location = new Point(29, 456);
             dgOrderDetails.Name = "dgOrderDetails";
             dgOrderDetails.ReadOnly = true;

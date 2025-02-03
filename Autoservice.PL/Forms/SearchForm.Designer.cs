@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgSearchClient = new DataGridView();
             dgSearchOrder = new DataGridView();
             dgSearchCar = new DataGridView();
@@ -43,7 +46,16 @@
             // dgSearchClient
             // 
             dgSearchClient.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgSearchClient.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgSearchClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgSearchClient.DefaultCellStyle = dataGridViewCellStyle1;
             dgSearchClient.Location = new Point(50, 50);
             dgSearchClient.Name = "dgSearchClient";
             dgSearchClient.Size = new Size(520, 250);
@@ -52,7 +64,16 @@
             // dgSearchOrder
             // 
             dgSearchOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgSearchOrder.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgSearchOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgSearchOrder.DefaultCellStyle = dataGridViewCellStyle2;
             dgSearchOrder.Location = new Point(50, 330);
             dgSearchOrder.Name = "dgSearchOrder";
             dgSearchOrder.Size = new Size(520, 250);
@@ -61,7 +82,16 @@
             // dgSearchCar
             // 
             dgSearchCar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgSearchCar.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgSearchCar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgSearchCar.DefaultCellStyle = dataGridViewCellStyle3;
             dgSearchCar.Location = new Point(600, 50);
             dgSearchCar.Name = "dgSearchCar";
             dgSearchCar.Size = new Size(580, 530);

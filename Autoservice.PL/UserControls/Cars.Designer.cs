@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtYear = new TextBox();
             txtModel = new TextBox();
             txtMake = new TextBox();
@@ -227,7 +228,16 @@
             // dgCars
             // 
             dgCars.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgCars.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgCars.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgCars.DefaultCellStyle = dataGridViewCellStyle1;
             dgCars.Location = new Point(306, 13);
             dgCars.Name = "dgCars";
             dgCars.Size = new Size(612, 652);
