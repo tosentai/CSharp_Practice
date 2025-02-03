@@ -1,0 +1,125 @@
+public interface IGenericRepository<T> where T : class
+{
+    IEnumerable<T> GetAll();
+    T GetById(int id);
+    void Add(T entity);
+    void Update(T entity);
+    void Delete(int id);
+    Task SaveAsync();
+}
+
+public class GenericRepository<T> : IGenericRepository<T> where T : class
+{
+    protected readonly AutoserviceContext _context;
+    private readonly DbSet<T> _dbSet;
+
+    public GenericRepository(AutoserviceContext context)
+    {
+        _context = context;
+        _dbSet = _context.Set<T>();
+    }
+
+    public IEnumerable<T> GetAll()
+    {
+        return _dbSet.ToList();
+    }
+
+    public T GetById(int id)
+    {
+        return _dbSet.Find(id);
+    }
+
+    public void Add(T entity)
+    {
+        _dbSet.Add(entity);
+    }
+
+    public void Update(T entity)
+    {
+        _dbSet.Update(entity);
+    }
+
+    public void Delete(int id)
+    {
+        var entity = _dbSet.Find(id);
+        if (entity != null)
+        {
+            _dbSet.Remove(entity);
+        }
+    }
+
+    public async Task SaveAsync()
+    {
+        await _context.SaveChangesAsync();
+    }
+}
+
+public class CarRepository : GenericRepository<Car>
+{
+    public CarRepository(AutoserviceContext context) : base(context) { }
+}
+
+public class ClientRepository : GenericRepository<Client>
+{
+    public ClientRepository(AutoserviceContext context) : base(context) { }
+}
+
+public class EmployeeRepository : GenericRepository<Employee>
+{
+    public EmployeeRepository(AutoserviceContext context) : base(context) { }
+}
+
+public class OrderRepository : GenericRepository<Order>
+{
+    public OrderRepository(AutoserviceContext context) : base(context) { }
+}
+
+public class ServiceRepository : GenericRepository<Service>
+{
+    public ServiceRepository(AutoserviceContext context) : base(context) { }
+}
+
+public class OrderDetailRepository : GenericRepository<OrderDetail>
+{
+    public OrderDetailRepository(AutoserviceContext context) : base(context) { }
+}
+
+public class UserRepository : GenericRepository<User>
+{
+    public UserRepository(AutoserviceContext context) : base(context) { }   
+}
+
+public class UnitOfWork : IDisposable
+{
+    private readonly AutoserviceContext _context;
+
+    public UnitOfWork(AutoserviceContext context)
+    {
+        _context = context;
+        Cars = new CarRepository(context);
+        Clients = new ClientRepository(context);
+        Employees = new EmployeeRepository(context);
+        Orders = new OrderRepository(context);
+        OrderDetails = new OrderDetailRepository(context);
+        Services = new ServiceRepository(context);
+        Users = new UserRepository(context);  
+    }
+
+    public CarRepository Cars { get; }
+    public ClientRepository Clients { get; }
+    public EmployeeRepository Employees { get; }
+    public OrderRepository Orders { get; }
+    public OrderDetailRepository OrderDetails { get; } 
+    public ServiceRepository Services { get; }
+    public UserRepository Users { get; } 
+
+    public async Task SaveAsync()
+    {
+        await _context.SaveChangesAsync();
+    }
+
+    public void Dispose()
+    {
+        _context.Dispose();
+    }
+}
